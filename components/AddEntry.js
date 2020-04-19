@@ -6,6 +6,7 @@ import UdaciSlider from './UdaciSlider';
 import UdaciSteppers from './UdaciSteppers';
 import DateHeader from './DateHeader';
 import TextButton from './TextButton';
+import { submitEntry, removeEntry } from '../utils/api';
 
 const SubmitBtn = ({ onPress }) => {
   return (
@@ -58,14 +59,14 @@ class AddEntry extends Component {
     // Update Redux
     this.setState(() => ({ run: 0, bike: 0, swim: 0, sleep: 0, eat: 0 }));
     // Navigate to Home
-    // Save to DB
+    submitEntry({ key, entry });
     // Clean local notifications
   };
   reset = () => {
     const key = timeToString();
     // Update Redux
     // Route to Home
-    // Update our database
+    removeEntry(key);
   };
   render() {
     const metaInfo = getMetricMetaInfo();
