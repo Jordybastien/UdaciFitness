@@ -4,6 +4,7 @@ import AddEntry from './components/AddEntry';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducer from './reducers';
+import History from './components/History';
 
 class App extends Component {
   state = {};
@@ -11,7 +12,8 @@ class App extends Component {
     return (
       <Provider store={createStore(reducer)}>
         <View style={{ flex: 1 }}>
-          <AddEntry />
+          <View style={{ height: 20 }} />
+          <History />
         </View>
       </Provider>
     );
