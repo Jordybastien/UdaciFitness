@@ -76,7 +76,7 @@ class AddEntry extends Component {
 
     this.props.dispatch(addEntry({ [key]: entry }));
     this.setState(() => ({ run: 0, bike: 0, swim: 0, sleep: 0, eat: 0 }));
-    // Navigate to Home
+    this.props.navigation.goBack();
     submitEntry({ key, entry });
     // Clean local notifications
   };
@@ -84,7 +84,7 @@ class AddEntry extends Component {
   reset = () => {
     const key = timeToString();
     this.props.dispatch(addEntry({ [key]: getDailyReminderValue() }));
-    // Route to Home
+    this.props.navigation.goBack();
     removeEntry(key);
   };
 
@@ -94,9 +94,14 @@ class AddEntry extends Component {
     if (this.props.alreadyLogged) {
       return (
         <View style={styles.center}>
-          <Ionicons name={Platform.OS === 'ios' ? 'ios-happy-outline' : 'md-happy'} size={100} />
+          <Ionicons
+            name={Platform.OS === 'ios' ? 'ios-happy-outline' : 'md-happy'}
+            size={100}
+          />
           <Text>You already logged in your information for today</Text>
-          <TextButton style={{padding: 10}} onPress={this.reset}>Reset</TextButton>
+          <TextButton style={{ padding: 10 }} onPress={this.reset}>
+            Reset
+          </TextButton>
         </View>
       );
     }
