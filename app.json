@@ -1,6 +1,7 @@
 {
   "name": "UdaciFitness",
   "displayName": "UdaciFitness",
+  "sdkVersion": "36.0.0",
   "expo": {
     "name": "UdaciFitness",
     "slug": "UdaciFitness",
