@@ -6,6 +6,7 @@ import History from '../components/History';
 import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import { Platform } from 'react-native';
 import AddEntry from '../components/AddEntry';
+import Live from '../components/Live';
 
 const RouteConfigs = {
   History: {
@@ -26,6 +27,16 @@ const RouteConfigs = {
         <FontAwesome name='plus-square' size={30} color={tintColor} />
       ),
       title: 'Add Entry',
+    },
+  },
+  Live: {
+    component: Live,
+    name: 'Live',
+    options: {
+      tabBarIcon: ({ tintColor }) => (
+        <FontAwesome name='ios-speedometer' size={30} color={tintColor} />
+      ),
+      title: 'Live',
     },
   },
 };
@@ -60,6 +71,7 @@ const TabNavigator = () => {
     <Tab.Navigator {...TabNavigatorConfig}>
       <Tab.Screen {...RouteConfigs['History']} />
       <Tab.Screen {...RouteConfigs['AddEntry']} />
+      <Tab.Screen {...RouteConfigs['Live']} />
     </Tab.Navigator>
   );
 };
