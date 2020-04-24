@@ -10,6 +10,8 @@ import {
   getMetricMetaInfo,
   timeToString,
   getDailyReminderValue,
+  clearLocalNotification,
+  setLocalNotification,
 } from '../utils/helpers';
 import { Ionicons } from '@expo/vector-icons';
 import UdaciSlider from './UdaciSlider';
@@ -78,7 +80,7 @@ class AddEntry extends Component {
     this.setState(() => ({ run: 0, bike: 0, swim: 0, sleep: 0, eat: 0 }));
     this.props.navigation.goBack();
     submitEntry({ key, entry });
-    // Clean local notifications
+    clearLocalNotification().then(setLocalNotification);
   };
 
   reset = () => {
