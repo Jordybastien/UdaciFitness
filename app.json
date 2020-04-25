@@ -3,9 +3,21 @@
   "displayName": "UdaciFitness",
   "sdkVersion": "36.0.0",
   "expo": {
+    "orientation": "portrait",
     "name": "UdaciFitness",
-    "slug": "UdaciFitness",
-    "version": "1.0.0",
+    "description": "The best triathlon tracker ever",
+    "slug": "udacfitness",
+    "version": "1.0",
+    "icon": "https://tylermcginnis.com/udacifitness-512.png",
+    "notification": {
+      "icon": "https://tylermcginnis.com/udacifitness-45.png"
+    },
+    "ios": {
+      "bundleIdentifier": "org.udacifitness.exp"
+    },
+    "android": {
+      "package": "org.udacifitness.exp"
+    },
     "platforms": [
       "ios",
       "android",
